@@ -18,10 +18,30 @@
   font-weight: 500;
   transition: .3s;
 }
+.navbar_list:hover{
+  color: var(--title-color-dark);
+}
 
-.contact_button:hover .contact_button_span{
+.wheel{
+  animation: scroll 2s  infinite;
+}
+
+@keyframes scroll{
+   0%{
+    transform: translateY(0);
+   }
+   40%{
+    transform: translateY(3.2rem);
+   }
+   80%{
+    transform: translateY(6.4rem);
+   }
+}
+
+.contact_button:hover .contact_button_span,
+.home_button:hover .home_button_hover{
   transform: rotate(-30deg);
-  transition-duration: 400ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0, 0, 0.4, 1);
 }
 
@@ -43,6 +63,12 @@
 }
 
 
+
+dialog{
+  padding: 2rem;
+  border-radius: 1rem;
+  size: 1.5rem;
+}
 
 @keyframes morph{
   0% {
@@ -104,17 +130,7 @@
 }
 
 /* Responsive typography */
-@media screen and (max-width: 992px) {
-  :root {
-    --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.938rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
-  }
-}
+
 
 
 
@@ -186,10 +202,7 @@ button {
   margin-right: auto;
 }
 
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
+
 
 
 .button {
@@ -214,50 +227,7 @@ button {
   align-items: center;
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For large devices */
-@media screen and (max-width: 992px) {
-  .container {
-    margin-left: var(--mb-1-5);
-    margin-right: var(--mb-1-5);
-  }
 
-  .button {
-    padding: 1rem 1.75rem;
-  }
 
-  .button__icon {
-    width: 22px;
-    height: 22px;
-  }
-}
 
-/* For medium devices */
-@media screen and (max-width: 768px) {
-  body {
-    margin: 0 0 var(--header-height) 0;
-  }
 
-  .section {
-    padding: 2rem 0 4rem;
-  }
-
-  .section__subtitle {
-    margin-bottom: var(--mb-3);
-  }
-}
-
-@media screen and (max-width: 576px) {
-}
-
-/* For small devices */
-@media screen and (max-width: 350px) {
-  :root {
-    --big-font-size: 2.25rem;
-  }
-
-  .container {
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
-  }
-}

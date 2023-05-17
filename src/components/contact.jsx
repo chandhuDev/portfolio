@@ -1,30 +1,34 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import emailjs from 'emailjs-com'
 import { contact_type } from '../utils/index'
 
 const service_id=import.meta.env.VITE_EMAIL_SERVICE_ID
 const template_id=import.meta.env.VITE_EMAIL_TEMPLATE_ID
-
+const public_id=import.meta.env.VITE_EMAIL_PUBLIC_ID
 
 const contact = () => {
+  const form = useRef(null)
+  const screenWidth=768 
 
   const sendMail = (e) => {
-    e.preventDefault();
-  
-    // Get form data
-    const name = e.target.elements.name.value;
-    const email = e.target.elements.email.value;
-    const message = e.target.elements.project.value;
-  
-    
-    emailjs.send(service_id, template_id, { name, email, message },)
+    e.preventDefault()
+    const user_name = e.target.elements.user_name.value
+    const user_email = e.target.elements.user_email.value
+    const message = e.target.elements.message.value
+    emailjs.send(service_id, template_id,{ user_name , user_email , message},public_id)
       .then((result) => {
-        console.log("Email sent successfully!", result);
+        console.log("Email sent successfully!", result)
+        const modalOpen=document.querySelector('dialog')
+        const closeModal=document.querySelector('.dialog_close')
+        modalOpen.showModal()
+        closeModal.addEventListener('click',()=>{
+          modalOpen.close()
+        })
         
       })
       .catch((error) => {
-        console.error("Error sending email:", error);
-      });
+        console.error("Error sending email:", error)
+      })
   };
 
 
@@ -32,70 +36,78 @@ const contact = () => {
 
   return (
     <>
-      <div className='w-full h-full flex flex-row gap-x-8 items-center justify-center py-10' id='Contact'>
-        <div className='w-3/4'>
-          <div className='mt-10 w-full flex justify-center items-center flex-col gap-1'>
-            <h2 className='text-3xl'>Contact Me</h2>
+      <div className='w-full h-full flex md:flex-row flex-col md:gap-x-8 gap-y-4 items-center md:justify-evenly justify-center md:py-10 py-5' id='Contact'>
+        <div className='md:w-4/5 w-3/4'>
+          <div className='md:mt-10 mt-5 w-full flex justify-center items-center flex-col gap-1'>
+            <h2 className='md:text-3xl text-xl'>Contact Me</h2>
             <p>Get in touch</p>
           </div>
-          <h2 className='w-2/4 text-center mx-auto my-10 text-lg font-light'>Have a question, new opportunity, or just want to have a quick chat ? Feel free to send me a message</h2>
-          <div className='flex flex-row justify-around'>
-            <div className='flex flex-col gap-y-5'>
-               <p className='text-2xl w-full text-center block'>Talk to me</p>
+          <h2 className='md:w-2/4 w-4/5 text-center mx-auto md:my-10 my-5 md:text-lg text-sm font-light'>Have a question, new opportunity, or just want to have a quick chat ? Feel free to send me a message</h2>
+          <div className='flex md:flex-row md:ml-16 ml-0 flex-col justify-around'>
+            <div className='flex flex-col md:gap-y-5 gap-y-3 items-center ml-0 md:ml-16'>
+               <p className='md:text-2xl text-xl w-full md:mb-0 mb-3 text-center block font-normal'>Talk to me</p>
                {
                 contact_type.map((contact_info,index)=>{
                     return (
-                        <div key={index} className='w-full h-full grid content-center text-center justify-center px-16 cursor-pointer rounded-lg shadow-md border-2'>
-                           <i className={`uil uil-${contact_info.class} text-2xl`}></i>
-                           <div className='flex flex-col justify-center items-center'>
-                             <p className='text-xl'>{contact_info.social_name}</p>
-                             <p className='text-sm'>{contact_info.value}</p>
+                        <div key={index} className='md:w-full md:h-full w-4/5 h-4/5 grid content-center text-center justify-center md:px-16 p-3 cursor-pointer rounded-lg shadow-md border-2'>
+                           <i className={`uil uil-${contact_info.class} md:text-2xl text-4xl`}></i>
+                           <div className='md:flex hidden flex-col justify-center items-center'>
+                             <p className='md:text-xl text-base'>{contact_info.social_name}</p>
+                             <p className='md:text-sm text-xs'>{contact_info.value}</p>
                             </div>
-                           <p className='inline-flex justify-center items-center w-full cursor-pointer'>Write me<span className='ml-1'><i className='uil uil-arrow-right text-2xl hover:translate-x-1'></i></span></p> 
+                            <a href={contact_info.url}><p className='inline-flex justify-center items-center w-full cursor-pointer'>Write me<span className='ml-1'><i className='uil uil-arrow-right md:text-2xl text-base hover:translate-x-1'></i></span></p></a> 
                         </div>   
                     )
                 })
                }
             </div>
-            <div className='flex flex-col gap-y-5'>
-              <p className='text-2xl w-full text-center block'>Write your Project</p>
-               <form className='text-base rounded-md shadow-xl border-2 p-6 space-y-12' onSubmit={sendMail}>
+            <div className='flex flex-col md:gap-y-5 gap-y-3 md:mt-0 mt-4 md:ml-28 ml-0'>
+              <p className='md:text-2xl text-xl font-normal w-full text-center block md:mb-0 mb-3'>Write your Project</p>
+               <form className='md:text-base text-sm rounded-md shadow-lg border-2 md:p-6 p-4 md:space-y-12 space-y-8' ref={form} onSubmit={sendMail}>
                 <div className='relative'>
-                  <label className='absolute z-20 left-6 -top-3 bg-white px-1'>Name</label>
+                  <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Name</label>
                   <input
                   type='text'
-                  name='name'
+                  name='user_name'
                   placeholder='Insert your name'
-                  className='rounded-md p-3 border-black/30 border-2 w-full'/>
+                  className='rounded-md md:p-3 p-1.5 border-black/30 border-2 w-full'
+                  required/>
                 </div>
                 <div className='relative'>
-                  <label className='absolute z-20 left-6 -top-3 bg-white px-1'>Email</label>
+                  <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Email</label>
                   <input
                   type='email'
-                  name='email'
+                  name='user_email'
                   placeholder='Enter your email address'
-                  className='rounded-md p-3 border-black/30 border-2 w-full'/>
+                  className='rounded-md md:p-3 p-1.5 border-black/30 border-2 w-full'
+                  required/>
                 </div>
                 <div className='relative'>
-                  <label className='absolute z-20 left-6 -top-3 bg-white px-1'>Project</label>
+                  <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
-                  name='project'
-                  cols={40}
+                  name='message'
+                  cols={screenWidth >768 ? 40 : 31}
                   rows={10}
                   placeholder='Write your project description'
-                  className='rounded-md p-4 border-black/30 border-2'>
+                  className='rounded-md md:p-4 p-2 border-black/30 border-2'
+                  required
+                  >
                   </textarea>
                 </div>
-                <button className='bg-blue-900 hover:bg-blue-900/80 hover:duration-300 text-white w-full inline-flex justify-center items-center rounded-xl ml-3 py-3 contact_button' onSubmit={sendMail}>
-                      Connect Now<span className='ml-3 inline-block contact_button_span'><i class="uil uil-message"></i></span>
+                <button className='bg-blue-900 hover:bg-blue-900/80 hover:duration-300 text-white w-full inline-flex justify-center items-center rounded-xl md:ml-3 ml-1 md:py-3 py-1.5 contact_button'>
+                      Connect Now<span className='md:ml-3 ml-1 inline-block contact_button_span'><i class="uil uil-message"></i></span>
                 </button>
                </form>
-            </div>
-          <div>
+             </div>
+           <div>
 
             </div>
           </div> 
         </div>
+        <dialog>
+         <h2>Successfully sent!</h2>
+         <button className='p-1 rounded-2xl bg-black/50 text-white dialog_close'>Close</button>
+        </dialog>
       </div>
     </>
   )

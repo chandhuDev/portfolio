@@ -188,15 +188,18 @@ export const contact_type=[
     class:'envelope-edit',
     social_name:'Email',
     value:'chandhudev0@gmail.com',
+    url:'https://mail.google.com/mail/?view=cm&fs=1&to=chandhudev0@gmail.com&su=Hello%20Chandhu%20,%20we%20have%20an%20Offer%20for%20You!'
   },
   {
     class:'whatsapp-alt',
     social_name:'Whatsapp',
     value:'+91-6303333646',
+    url:'https://wa.me/6303333646'
   },
   {
     class:'slack-alt',
     social_name:'Slack',
     value:'slack.com',
+    url:'https://a1marketing.slack.com/team/U04DAUYDRQB'
   },
 ]

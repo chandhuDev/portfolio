@@ -1,11 +1,14 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import { projects } from'../utils/index'
+import  projectImage  from'../assets/profile.jpg'
 
 const portfolio = () => {
+  const [portfolioImage,setPortfolioImage]=useState(3)
+
   return (
     <>
       <div className='w-full h-full flex flex-col md:gap-y-12 gap-y-6 gap items-center justify-center md:py-10 py-1' id='Portfolio'>
-         <div className='w-4/5 mx-auto'>
+         <div className='w-full'>
           <div className='md:my-10 my-5 w-full flex justify-center items-center flex-col gap-1'>
             <h2 className='md:text-3xl text-xl'>Portfolio</h2>
             <p>My recent work</p>
@@ -25,7 +28,22 @@ const portfolio = () => {
                 })
              }
           </div>
-         </div>
+          {/* <div className='my-10 w-2/3 mx-auto h-full flex flex-row gap-x-5 bg-yellow-600 justify-between p-5'>
+            {
+               projects.map((project,index)=>{
+                return (
+                  <div className={`rounded-xl border-2 bg-cover h-full cursor-pointer ${portfolioImage=== project.id ? 'grow' : 'grow-0'}`} 
+                  key={index} 
+                  onClick={()=>setPortfolioImage(project.id)}
+                  //style={{backgroundImage:`url(${projectImage})`}}
+                  >
+                     <img src={projectImage} alt='image' className='h-[420px] rounded-xl set_width'/>
+                  </div>
+                )
+               })   
+            }
+          </div>  */}
+        </div>
       </div>
     </>
   )

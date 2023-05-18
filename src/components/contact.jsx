@@ -44,7 +44,7 @@ const contact = () => {
           </div>
           <h2 className='md:w-2/4 w-4/5 text-center mx-auto md:my-10 my-5 md:text-lg text-sm font-light'>Have a question, new opportunity, or just want to have a quick chat ? Feel free to send me a message</h2>
           <div className='flex md:flex-row md:ml-16 ml-0 flex-col justify-around'>
-            <div className='flex flex-col md:gap-y-5 gap-y-3 items-center ml-0 md:ml-16'>
+            <div className='flex flex-col md:gap-y-5 gap-y-3 items-center ml-0 md:ml-12'>
                <p className='md:text-2xl text-xl w-full md:mb-0 mb-3 text-center block font-normal'>Talk to me</p>
                {
                 contact_type.map((contact_info,index)=>{

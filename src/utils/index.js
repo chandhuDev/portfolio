@@ -11,6 +11,13 @@ import mongo from '../assets/skills/mongo.svg'
 import node from '../assets/skills/node.svg'
 import react from '../assets/skills/react.svg'
 import tailwind from '../assets/skills/tailwind.svg'
+// images for navbar items
+import blog from '../assets/navItems/blogs.svg'
+import contact from '../assets/navItems/contact.svg'
+import home from '../assets/navItems/home.svg'
+import portfolio from '../assets/navItems/portfolio.svg'
+import skill from '../assets/navItems/skills.svg'
+import user from '../assets/navItems/user.svg'
 
 export const navbar_items=[
   {
@@ -19,7 +26,7 @@ export const navbar_items=[
   },
   {
     name:'About',
-    class:'user'
+    class:'user-square'
   },
   {
     name:'Skills',
@@ -141,33 +148,33 @@ export const projects=[
    {
    image:testimonial,
    demo:'project',
-   code:'project'
+   code:'project',
+   id:1
    },
   {
     image:testimonial,
+   demo:'project',
+   code:'project',
+   id:2
+  },
+   {
+    image:testimonial,
     demo:'project',
-    code:'project'
+    code:'project',
+    id:3
    },
    {
     image:testimonial,
     demo:'project',
-    code:'project'
+    code:'project',
+    id:4
    },
    {
     image:testimonial,
     demo:'project',
-    code:'project'
+    code:'project',
+    id:5
    },
-   {
-    image:testimonial,
-    demo:'project',
-    code:'project'
-   },
-   {
-    image:testimonial,
-    demo:'project',
-    code:'project'
-   }
 ]
 
 

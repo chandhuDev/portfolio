@@ -202,7 +202,9 @@ button {
   margin-right: auto;
 }
 
-
+.set_width{
+  width: minmax(64px,auto);
+}
 
 
 .button {

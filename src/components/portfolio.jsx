@@ -5,6 +5,12 @@ import  projectImage  from'../assets/profile.jpg'
 const portfolio = () => {
   const [portfolioImage,setPortfolioImage]=useState(3)
 
+
+  const setPortfolio=(id)=>{
+   setPortfolioImage(id)
+  }
+  
+
   return (
     <>
       <div className='w-full h-full flex flex-col md:gap-y-12 gap-y-6 gap items-center justify-center md:py-10 py-1' id='Portfolio'>
@@ -13,36 +19,26 @@ const portfolio = () => {
             <h2 className='md:text-3xl text-xl'>Portfolio</h2>
             <p>My recent work</p>
           </div>
-          <div className='md:my-10 my-2 grid grid-cols-3 md:p-12 p-1'>
-             {
-                projects.map((project,index)=>{
-                    return (
-                        <div key={index} className='flex flex-col w-full h-full rounded-md shadow-lg border-2 border-black/40 cursor-pointer relative hover:scale-105 duration-300 ease-in-out bg-transparent'>
-                            <img src={project.image} alt='roject_image' className='w-full h-full rounded-md'/>
-                            <div className='flex flex-row justify-evenly opacity-90 md:gap-2 gap-1 absolute bottom-0 text-white left-0 w-full h-1/6 rounded-br-none rounded-bl-none rounded-md backdrop-blur-lg'>
-                             <p>{project.code}</p>
-                             <p>{project.demo}</p>
-                            </div>
-                        </div>
-                    )
-                })
-             }
-          </div>
-          {/* <div className='my-10 w-2/3 mx-auto h-full flex flex-row gap-x-5 bg-yellow-600 justify-between p-5'>
+          <div className='md:my-10 my-5 md:w-3/4 w-[90%] mx-auto h-full flex flex-row md:gap-x-5 gap-x-1 md:p-5 p-3'>
             {
-               projects.map((project,index)=>{
+               projects.map((project)=>{
                 return (
-                  <div className={`rounded-xl border-2 bg-cover h-full cursor-pointer ${portfolioImage=== project.id ? 'grow' : 'grow-0'}`} 
-                  key={index} 
-                  onClick={()=>setPortfolioImage(project.id)}
-                  //style={{backgroundImage:`url(${projectImage})`}}
+                  <div className={`md:rounded-xl rounded-md border-2 cursor-pointer relative ${portfolioImage === project.id ? 'grow image_transition scale-105' : ''}`} 
+                  key={project.id} 
+                  onClick={()=>setPortfolio(project.id)}
                   >
-                     <img src={projectImage} alt='image' className='h-[420px] rounded-xl set_width'/>
+                    <img src={projectImage} alt='image' className={`md:h-[420px] h-64 md:rounded-xl rounded-md w-24 object-cover ${portfolioImage === project.id ? 'w-full' : ''}`}/>
+                    { portfolioImage === project.id && 
+                    <div className='absolute md:bottom-3 bottom-1 md:left-5 left-3 flex flex-row justify-evenly md:text-2xl text-xs text-white font-medium md:w-1/3 w-1/2'>
+                      <p className='cursor-pointer shadow-2xl'>Code</p>
+                      <p className='cursor-pointer shadow-2xl'>Live</p>
+                    </div>
+                    }
                   </div>
                 )
                })   
             }
-          </div>  */}
+          </div> 
         </div>
       </div>
     </>

@@ -202,8 +202,8 @@ button {
   margin-right: auto;
 }
 
-.set_width{
-  width: minmax(64px,auto);
+.image_transition{
+  transition:.5s cubic-bezier(0.05, 0.41, 0.61, 0.85);
 }
 
 

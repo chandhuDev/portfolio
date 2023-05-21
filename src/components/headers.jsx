@@ -1,19 +1,34 @@
-import React , { useState } from 'react'
+import React , { useState , useEffect } from 'react'
 import { navbar_items } from '../utils'
 
 
 const Headers = () => {
    const [activeStyle,setActiveStyle]=useState('Home')
+   const [screenWidth, setScreenWidth] = useState(false)
    const [openNavbar,setOpenNavbar]=useState(false)
 
    function setNavbarItemStyle(id){
     setActiveStyle(id)
    }
    
+   useEffect(() => {
+    function handleResize() {
+     if(window.innerWidth >= 740 ){
+      setScreenWidth(true)
+     }else{
+      setScreenWidth(false)
+     } 
+    }
+    window.addEventListener('resize', handleResize)
+  }, [])
+
+ 
+
   return (
     <>
       <header className='bg-transparent'>
-        <nav className='flex md:flex-row flex-col md:justify-around justify-center items-center md:gap-y-4 gap-y-0 md:p-4 p-2 fixed z-30 w-full top-0 left-0 right-0 navbar_header md:border-b-2 border-b-0 bg-opacity-30 backdrop-blur-md'>
+        <nav className={`flex md:flex-row flex-col md:justify-around justify-center items-center md:gap-y-4 gap-y-0 md:p-4 p-2 fixed z-30 w-full ${
+          screenWidth ? 'top-0' : 'bottom-0'} left-0 right-0 navbar_header md:border-b-2 border-b-0 bg-opacity-30 backdrop-blur-md`}>
           <a href='index.html' className='py-1.5 px-5 md:inline hidden'>Chandhu</a>
           <div className='md:flex hidden gap-y-8 flex-row'>
           {
@@ -42,17 +57,15 @@ const Headers = () => {
               return (
               <div className='flex flex-col justify-center items-center cursor-pointer p-3' key={index}>
                  <p>{nav_item.name}</p>
-                 <a href={`${nav_item.name}`}><i className={`uil uil-${nav_item.class} text-2xl`}></i></a>
+                 <a href={`#${nav_item.name}`}><i className={`uil uil-${nav_item.class} text-2xl`}></i></a>
               </div>
               )
             })
-             
             }
-           </div>
+          </div>
           }
           <div className='font-medium md:hidden flex flex-row justify-center items-center w-full text-3xl' >
-            <i className='uil uil-apps cursor-pointer ease-in-out duration-300' onClick={()=>setOpenNavbar(true)}></i>
-            <i className='uil uil-times-square cursor-pointer ease-in-out duration-300' onClick={()=>setOpenNavbar(false)}></i>
+            <i className={`uil uil-${openNavbar ? 'times-square' : 'apps'} cursor-pointer ease-in-out duration-300`} onClick={()=>setOpenNavbar(!openNavbar)}></i>
           </div>
         </nav>
       </header>

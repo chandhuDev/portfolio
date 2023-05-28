@@ -147,8 +147,8 @@ export const Skills_items_tools=[
 export const projects=[
    {
    image:testimonial,
-   demo:'project',
-   code:'project',
+   demo:'https://aviewint.com/',
+   code:'https://github.com/Aview-International/aviewint-website',
    id:1
    },
   {
@@ -159,14 +159,14 @@ export const projects=[
   },
    {
     image:testimonial,
-    demo:'project',
-    code:'project',
+    demo:'https://travel-app-zeta-one.vercel.app/',
+    code:'https://github.com/chandhuDev/pack-your-bags',
     id:3
    },
    {
     image:testimonial,
-    demo:'project',
-    code:'project',
+    demo:'https://portfolio-theta-seven-10.vercel.app',
+    code:'https://github.com/chandhuDev/portfolio',
     id:4
    },
    {

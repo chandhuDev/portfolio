@@ -13,13 +13,13 @@ const portfolio = () => {
 
   return (
     <>
-      <div className='w-full h-full flex flex-col md:gap-y-12 gap-y-6 gap items-center justify-center md:py-10 py-1' id='Portfolio'>
+      <div className='w-full h-full flex flex-col md:gap-y-12 gap-y-6 gap items-center justify-center md:py-10 py-1 overflow-x-hidden' id='Portfolio'>
          <div className='w-full'>
           <div className='md:my-10 my-5 w-full flex justify-center items-center flex-col gap-1'>
             <h2 className='md:text-3xl text-xl'>Portfolio</h2>
             <p>My recent work</p>
           </div>
-          <div className='md:my-10 my-5 md:w-3/4 w-[90%] mx-auto h-full flex flex-row md:gap-x-5 gap-x-1 md:p-5 p-3'>
+          <div className='md:my-10 my-5 md:w-3/4 w-[92%] mx-auto h-full flex flex-row md:gap-x-5 gap-x-1 md:p-5 p-2'>
             {
                projects.map((project)=>{
                 return (

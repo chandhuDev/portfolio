@@ -5,8 +5,8 @@ import { Blogs } from '../utils'
 const blog = () => {
   return (
     <>
-      <div className='w-full h-full flex flex-col gap-y-12 items-center justify-center md:py-10 py-1' id='Blogs'>
-       <div className='w-4/5 mx-auto'>
+      <div className='w-full h-full flex flex-col gap-y-12 items-center justify-center md:py-10 py-1 overflow-x-hidden' id='Blogs'>
+       <div className='md:w-4/5 w-[85%] mx-auto'>
           <div className='md:my-10 my-5 w-full flex justify-center items-center flex-col gap-1'>
             <h2 className='md:text-3xl text-xl'>Blogs</h2>
             <p>My recent blogs</p>

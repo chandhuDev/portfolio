@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import emailjs from 'emailjs-com'
 import { contact_type } from '../utils/index'
 
@@ -8,8 +8,9 @@ const public_id=import.meta.env.VITE_EMAIL_PUBLIC_ID
 
 const contact = () => {
   const form = useRef(null)
-  const screenWidth=768 
-
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  
+  console.log(screenWidth)
   const sendMail = (e) => {
     e.preventDefault()
     const user_name = e.target.elements.user_name.value
@@ -29,15 +30,25 @@ const contact = () => {
       .catch((error) => {
         console.error("Error sending email:", error)
       })
-  };
+  }
 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
 
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    };
+  }, [])
 
 
   return (
     <>
-      <div className='w-full h-full flex md:flex-row flex-col md:gap-x-8 gap-y-4 items-center md:justify-evenly justify-center md:py-10 py-5' id='Contact'>
-        <div className='md:w-4/5 w-3/4'>
+      <div className='w-full h-full flex md:flex-row flex-col md:gap-x-8 gap-y-4 items-center md:justify-evenly justify-center md:py-10 py-5 overflow-x-hidden' id='Contact'>
+        <div className='md:w-4/5 w-[80%]'>
           <div className='md:mt-10 mt-5 w-full flex justify-center items-center flex-col gap-1'>
             <h2 className='md:text-3xl text-xl'>Contact Me</h2>
             <p>Get in touch</p>
@@ -86,7 +97,7 @@ const contact = () => {
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
                   name='message'
-                  cols={screenWidth >768 ? 40 : 31}
+                  cols={screenWidth > 620 ? 40 : `${ screenWidth > 380 ? 31 : 24 }` }
                   rows={10}
                   placeholder='Write your project description'
                   className='rounded-md md:p-4 p-2 border-black/30 border-2'

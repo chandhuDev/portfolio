@@ -52,7 +52,7 @@ const Headers = () => {
          </div>
           <i className='uil uil-times hidden'></i>
           {openNavbar&&
-           <div className='w-full h-full rounded-2xl border-2 border-b-0 border-black/10 shadow-inner rounded-br-none rounded-bl-none p-2 grid grid-cols-3 gap-2'>
+           <div className='w-full h-full rounded-2xl border-2 border-b-0 border-black/10 shadow-inner rounded-br-none rounded-bl-none p-2 grid grid-cols-3 gap-2 overflow-x-hidden'>
             { navbar_items.map((nav_item,index)=>{
               return (
               <div className='flex flex-col justify-center items-center cursor-pointer p-3' key={index}>

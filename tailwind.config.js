@@ -11,6 +11,10 @@ export default {
         'nav_link_active':'hsl(var(--hue), var(--sat), 46%)'
       }
     },
+    screens: {
+      'sm': '360px',
+      'md': '540px'
+    }
   },
   plugins: [],
 }

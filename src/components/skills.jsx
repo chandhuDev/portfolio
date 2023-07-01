@@ -15,7 +15,7 @@ const skills = () => {
           <Skills_layout_reuse skill={Skills_items_frontend} skillTitle='Frontend'/>
           <Skills_layout_reuse skill={Skills_items_backend} skillTitle='Backend'/>
         </div>
-        <div className='grid md:grid-cols-2 grid-cols-1 place-items-center md:m-12 m-0 md:mt-12 mt-6'>
+        <div className='grid grid-cols-1 place-items-center md:m-12 m-0 md:mt-12 gap-6 mt-6'>
           <Skills_layout_reuse skill={Skills_items_tools} skillTitle='Tools'/>
         </div>
         </div>

@@ -11,6 +11,8 @@ import mongo from '../assets/skills/mongo.svg'
 import node from '../assets/skills/node.svg'
 import react from '../assets/skills/react.svg'
 import tailwind from '../assets/skills/tailwind.svg'
+import kubernetes from '../assets/skills/kubernetes.svg'
+import stripe from '../assets/skills/stripe.svg'
 // images for navbar items
 import blog from '../assets/navItems/blogs.svg'
 import contact from '../assets/navItems/contact.svg'
@@ -124,6 +126,11 @@ export const Skills_items_backend=[
     level:'Basic',
     name:aws
   },
+  {
+    skill:'Kubernetes',
+    level:'Basic',
+    name:kubernetes
+  },
 ]
 
 export const Skills_items_tools=[
@@ -141,6 +148,11 @@ export const Skills_items_tools=[
     skill:'Strapi',
     level:'Intermediate',
     name:check
+  },
+  {
+    skill:'Stripe',
+    level:'Intermediate',
+    name:stripe
   },
 ]
 

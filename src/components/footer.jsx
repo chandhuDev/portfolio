@@ -14,9 +14,9 @@ const footer = () => {
            <a href='#Portfolio' className='cursor-pointer'>Portfolio</a>
          </div>
          <div className='flex flex-row gap-5 mb-10'>
-           <a href='https://twitter.com/chandhudev'><img src={twiter} alt='twiter' width={30} height={30} className='cursor-pointer'/></a>
-           <a href='https://t.me/USERNAME'><img src={telegram} alt='telegram' width={30} height={30} className='cursor-pointer'/></a>
-           <a href='https://www.instagram.com/USERNAME/'><img src={instagram} alt='instagram' width={30} height={30} className='cursor-pointer'/></a>
+           <a href='https://twitter.com/chandhudev' target='_blank'><img src={twiter} alt='twiter' width={30} height={30} className='cursor-pointer'/></a>
+           <a href='https://telegram.me/chandhuDev' target='_blank'><img src={telegram} alt='telegram' width={30} height={30} className='cursor-pointer'/></a>
+           <a href='https://www.instagram.com/chandhu_mamidi?r=nametag' target='_blank'><img src={instagram} alt='instagram' width={30} height={30} className='cursor-pointer'/></a>
          </div>
       </div>
     </>

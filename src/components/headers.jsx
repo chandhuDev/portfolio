@@ -18,8 +18,6 @@ const Headers = () => {
     window.addEventListener('resize', handleResize)
   }, [])
 
- 
-
   return (
     <>
       <header className='bg-transparent'>

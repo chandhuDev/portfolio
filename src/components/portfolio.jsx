@@ -1,17 +1,14 @@
 import React ,{useState} from 'react'
 import { projects } from'../utils/index'
-import  projectImage  from'../assets/profile.jpg'
 
 const portfolio = () => {
   const [portfolioImage,setPortfolioImage]=useState(3)
-
-
+  
   const setPortfolio=(id)=>{
    setPortfolioImage(id)
   }
   
-
-  return (
+return (
     <>
       <div className='w-full h-full flex flex-col md:gap-y-12 gap-y-6 gap items-center justify-center md:py-10 py-1 overflow-x-hidden' id='Portfolio'>
          <div className='w-full'>
@@ -19,7 +16,7 @@ const portfolio = () => {
             <h2 className='md:text-3xl text-xl'>Portfolio</h2>
             <p>My recent work</p>
           </div>
-          <div className='md:my-10 my-5 md:w-3/4 w-[92%] mx-auto h-full flex flex-row md:gap-x-5 gap-x-1 md:p-5 p-2'>
+          <div className='md:my-10 my-5 md:w-4/5 w-full mx-auto h-full flex flex-row md:gap-x-6 gap-x-2 md:p-5 p-2'>
             {
                projects.map((project)=>{
                 return (
@@ -27,11 +24,11 @@ const portfolio = () => {
                   key={project.id} 
                   onClick={()=>setPortfolio(project.id)}
                   >
-                    <img src={projectImage} alt='image' className={`md:h-[420px] h-64 md:rounded-xl rounded-md w-24 object-cover ${portfolioImage === project.id ? 'w-full' : ''}`}/>
+                    <img src={project.image} alt='image' className={`md:h-[420px] h-64 md:rounded-xl rounded-md w-16 object-center object-cover ${portfolioImage === project.id ? 'w-full' : ''}`}/>
                     { portfolioImage === project.id && 
-                    <div className='absolute md:bottom-3 bottom-1 md:left-5 left-3 flex flex-row justify-evenly md:text-2xl text-xs text-white font-medium md:w-1/3 w-1/2'>
-                      <p className='cursor-pointer shadow-2xl'>Code</p>
-                      <p className='cursor-pointer shadow-2xl'>Live</p>
+                    <div className={`absolute md:bottom-2 bottom-1 md:left-3 left-3 flex flex-row justify-evenly md:text-2xl text-xs font-bold md:w-1/4 w-1/2 ${project.id===5 ? 'text-white' : 'text-black/80' }`}>
+                      <a href={project.demo} target='_blank' className='cursor-pointer shadow-2xl'><i className='uil uil-github-alt'></i></a>
+                      <a href={project.code} target='_blank' className='cursor-pointer shadow-2xl'><i className='uil uil-external-link-alt'></i></a>
                     </div>
                     }
                   </div>

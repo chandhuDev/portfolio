@@ -1,4 +1,3 @@
-import testimonial from '../assets/testimonial1.png'
 import aws from '../assets/skills/aws.svg'
 import css from '../assets/skills/css.svg'
 import docker from '../assets/skills/docker.svg'
@@ -13,13 +12,17 @@ import react from '../assets/skills/react.svg'
 import tailwind from '../assets/skills/tailwind.svg'
 import kubernetes from '../assets/skills/kubernetes.svg'
 import stripe from '../assets/skills/stripe.svg'
-// images for navbar items
-import blog from '../assets/navItems/blogs.svg'
-import contact from '../assets/navItems/contact.svg'
-import home from '../assets/navItems/home.svg'
-import portfolio from '../assets/navItems/portfolio.svg'
-import skill from '../assets/navItems/skills.svg'
-import user from '../assets/navItems/user.svg'
+
+//blogs images
+import blog_1 from '../assets/blog-1.png'
+import blog_2 from '../assets/blog-2.png'
+import blog_3 from '../assets/blog-3.png'
+//projects image
+import image from '../assets/image.png'
+import virtual from '../assets/virtual.png'
+import pack from '../assets/pack.png'
+import movie from '../assets/movie.png'
+import port from '../assets/port.png'
 
 export const navbar_items=[
   {
@@ -56,12 +59,12 @@ export const about_items=[
   },
   {
     name:'Completed',
-    class:'award-alt',
+    class:'medal',
     number:'7+',
   },
   {
     name:'Support',
-    class:'award-alt',
+    class:'envelope-alt',
     number:'Online 24/7',
   },
 ]
@@ -90,7 +93,7 @@ export const Skills_items_frontend=[
   },
   {
     skill:'Next Js',
-    level:'Basic',
+    level:'Intermediate',
     name:react
   },
   {
@@ -108,7 +111,7 @@ export const Skills_items_backend=[
   },
   {
     skill:'MongoDB',
-    level:'Basic',
+    level:'Intermediate',
     name:mongo
   },
   {
@@ -151,40 +154,40 @@ export const Skills_items_tools=[
   },
   {
     skill:'Stripe',
-    level:'Intermediate',
+    level:'Basic',
     name:stripe
   },
 ]
 
 export const projects=[
    {
-   image:testimonial,
-   demo:'https://aviewint.com/',
-   code:'https://github.com/Aview-International/aviewint-website',
+   image:virtual,
+   demo:'https://chartjs-seven.vercel.app/',
+   code:'https://github.com/chandhuDev/chartjs',
    id:1
    },
   {
-    image:testimonial,
-   demo:'project',
-   code:'project',
+   image:image,
+   demo:'https://image-ecommerce.onrender.com',
+   code:'https://github.com/chandhuDev/image-ecommerce',
    id:2
   },
    {
-    image:testimonial,
+    image:pack,
     demo:'https://travel-app-zeta-one.vercel.app/',
     code:'https://github.com/chandhuDev/pack-your-bags',
     id:3
    },
    {
-    image:testimonial,
+    image:port,
     demo:'https://portfolio-theta-seven-10.vercel.app',
     code:'https://github.com/chandhuDev/portfolio',
     id:4
    },
    {
-    image:testimonial,
-    demo:'project',
-    code:'project',
+    image:movie,
+    demo:'http://movie-ci-cd-env.eba-rqm42pe2.us-east-1.elasticbeanstalk.com/',
+    code:'https://gitlab.com/chandhu/movie-booking-app',
     id:5
    },
 ]
@@ -192,13 +195,16 @@ export const projects=[
 
 export const Blogs=[
   {
-    image:testimonial,
+    image:blog_1,
+    url:'https://chandhu.hashnode.dev/mistakenly-pushed-env-file-to-remote-repo'
   },
   {
-    image:testimonial
+    image:blog_2,
+    url:'https://chandhu.hashnode.dev/mistake-to-avoid-while-learning-react'
   },
   {
-    image:testimonial
+    image:blog_3,
+    url:'https://chandhu.hashnode.dev/how-to-upload-media-files-to-strapi-backend-endpoint'
   },
 ]
 

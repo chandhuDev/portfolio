@@ -66,7 +66,7 @@ const contact = () => {
                              <p className='md:text-xl text-base'>{contact_info.social_name}</p>
                              <p className='md:text-sm text-xs'>{contact_info.value}</p>
                             </div>
-                            <a href={contact_info.url}><p className='inline-flex justify-center items-center w-full cursor-pointer'>Write me<span className='ml-1'><i className='uil uil-arrow-right md:text-2xl text-base hover:translate-x-1'></i></span></p></a> 
+                            <a href={contact_info.url} target='_blank'><p className='inline-flex justify-center items-center w-full cursor-pointer'>Write me<span className='ml-1'><i className='uil uil-arrow-right md:text-2xl text-base hover:translate-x-1'></i></span></p></a> 
                         </div>   
                     )
                 })
@@ -97,7 +97,7 @@ const contact = () => {
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
                   name='message'
-                  cols={screenWidth > 620 ? 40 : `${ screenWidth > 380 ? 31 : 24 }` }
+                  cols={screenWidth > 620 ? 40 : `${ screenWidth > 380 ? 30 : 23 }` }
                   rows={10}
                   placeholder='Write your project description'
                   className='rounded-md md:p-4 p-2 border-black/30 border-2'

@@ -27,8 +27,8 @@ return (
                     <img src={project.image} alt='image' className={`md:h-[420px] h-64 md:rounded-xl rounded-md w-16 object-center object-cover ${portfolioImage === project.id ? 'w-full' : ''}`}/>
                     { portfolioImage === project.id && 
                     <div className={`absolute md:bottom-2 bottom-1 md:left-3 left-3 flex flex-row justify-evenly md:text-2xl text-xs font-bold md:w-1/4 w-1/2 ${project.id===5 ? 'text-white' : 'text-black/80' }`}>
-                      <a href={project.demo} target='_blank' className='cursor-pointer shadow-2xl'><i className='uil uil-github-alt'></i></a>
-                      <a href={project.code} target='_blank' className='cursor-pointer shadow-2xl'><i className='uil uil-external-link-alt'></i></a>
+                      <a href={project.code} target='_blank' className='cursor-pointer shadow-2xl'><i className='uil uil-github-alt'></i></a>
+                      <a href={project.demo} target='_blank' className='cursor-pointer shadow-2xl'><i className='uil uil-external-link-alt'></i></a>
                     </div>
                     }
                   </div>

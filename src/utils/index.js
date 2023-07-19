@@ -180,7 +180,7 @@ export const projects=[
    },
    {
     image:port,
-    demo:'https://portfolio-theta-seven-10.vercel.app',
+    demo:'https://chandhu.vercel.app/',
     code:'https://github.com/chandhuDev/portfolio',
     id:4
    },
@@ -219,7 +219,7 @@ export const contact_type=[
     class:'whatsapp-alt',
     social_name:'Whatsapp',
     value:'+91-6303333646',
-    url:'https://wa.me/6303333646'
+    url:'https://wa.me/+91-6303333646'
   },
   {
     class:'slack-alt',

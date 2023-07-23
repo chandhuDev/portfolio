@@ -174,7 +174,7 @@ export const projects=[
   },
    {
     image:pack,
-    demo:'https://travel-app-zeta-one.vercel.app/',
+    demo:'https://pack-your-bags-beige.vercel.app/',
     code:'https://github.com/chandhuDev/pack-your-bags',
     id:3
    },

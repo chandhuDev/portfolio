@@ -97,7 +97,7 @@ const contact = () => {
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
                   name='message'
-                   cols={screenWidth > 620 ? 40 : `${ screenWidth > 400 ? 30 : 26 }` }
+                  cols={screenWidth > 620 ? 40 : screenWidth > 400 ? 30 : 26 }
                   rows={10}
                   placeholder='Write your project description'
                   className='rounded-md md:p-4 p-2 border-black/30 border-2'

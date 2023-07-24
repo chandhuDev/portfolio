@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef } from 'react'
 import emailjs from 'emailjs-com'
 import { contact_type } from '../utils/index'
 
@@ -8,8 +8,6 @@ const public_id=import.meta.env.VITE_EMAIL_PUBLIC_ID
 
 const contact = () => {
   const form = useRef(null)
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-  
   
   const sendMail = (e) => {
     e.preventDefault()
@@ -31,20 +29,6 @@ const contact = () => {
       })
     }
     
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    };
-  }, [])
-
-//{`${screenWidth > 620 ? 40 : screenWidth > 400 ? 30 : 28 }`}
   return (
     <>
       <div className='w-full h-full flex md:flex-row flex-col md:gap-x-8 gap-y-4 items-center md:justify-evenly justify-center md:py-10 py-5 overflow-x-hidden' id='Contact'>
@@ -72,9 +56,9 @@ const contact = () => {
                 })
                }
             </div>
-            <div className='flex flex-col md:gap-y-5 gap-y-3 md:mt-0 mt-4 md:ml-28 ml-0 container mx-auto'>
+            <div className='flex flex-col md:gap-y-5 gap-y-3 md:mt-0 mt-4 md:ml-28 ml-0'>
               <p className='md:text-2xl text-xl font-normal w-full text-center block md:mb-0 mb-3'>Write your Project</p>
-               <form className='md:text-base text-sm rounded-md shadow-lg border-2 md:p-6 p-4 md:space-y-12 space-y-8' ref={form} onSubmit={sendMail}>
+              <form className='md:text-base text-sm rounded-md shadow-lg border-2 md:p-6 p-4 md:space-y-12 space-y-8 md:w-[135%] w-full' ref={form} onSubmit={sendMail}>
                 <div className='relative'>
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Name</label>
                   <input
@@ -107,11 +91,11 @@ const contact = () => {
                 <button className='bg-blue-900 hover:bg-blue-900/80 hover:duration-300 text-white w-full inline-flex justify-center items-center rounded-xl md:ml-3 ml-1 md:py-3 py-1.5 contact_button'>
                       Connect Now<span className='md:ml-3 ml-1 inline-block contact_button_span'><i class="uil uil-message"></i></span>
                 </button>
-               </form>
-             </div>
+              </form>
+            </div>
            <div>
 
-            </div>
+         </div>
           </div> 
         </div>
         <dialog>

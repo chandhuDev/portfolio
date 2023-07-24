@@ -10,7 +10,6 @@ const contact = () => {
   const form = useRef(null)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   
-  console.log(screenWidth)
   const sendMail = (e) => {
     e.preventDefault()
     const user_name = e.target.elements.user_name.value
@@ -25,7 +24,6 @@ const contact = () => {
         closeModal.addEventListener('click',()=>{
           modalOpen.close()
         })
-        
       })
       .catch((error) => {
         console.error("Error sending email:", error)
@@ -97,8 +95,8 @@ const contact = () => {
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
                   name='message'
-                  cols={screenWidth > 620 ? 40 : screenWidth > 400 ? 30 : 28 }
-                  rows={10}
+                  cols={`${screenWidth > 620 ? 40 : screenWidth > 400 ? 30 : 28 }`}
+                  rows="10"
                   placeholder='Write your project description'
                   className='rounded-md md:p-4 p-2 border-black/30 border-2'
                   required

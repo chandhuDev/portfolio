@@ -42,7 +42,7 @@ const contact = () => {
     };
   }, [])
 
-
+//{`${screenWidth > 620 ? 40 : screenWidth > 400 ? 30 : 28 }`}
   return (
     <>
       <div className='w-full h-full flex md:flex-row flex-col md:gap-x-8 gap-y-4 items-center md:justify-evenly justify-center md:py-10 py-5 overflow-x-hidden' id='Contact'>
@@ -95,7 +95,7 @@ const contact = () => {
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
                   name='message'
-                  cols={`${screenWidth > 620 ? 40 : screenWidth > 400 ? 30 : 28 }`}
+                  cols="28"
                   rows="10"
                   placeholder='Write your project description'
                   className='rounded-md md:p-4 p-2 border-black/30 border-2'

@@ -10,13 +10,14 @@ const contact = () => {
   const form = useRef(null)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   
+  
   const sendMail = (e) => {
     e.preventDefault()
     const user_name = e.target.elements.user_name.value
     const user_email = e.target.elements.user_email.value
     const message = e.target.elements.message.value
     emailjs.send(service_id, template_id,{ user_name , user_email , message},public_id)
-      .then((result) => {
+    .then((result) => {
         console.log("Email sent successfully!", result)
         const modalOpen=document.querySelector('dialog')
         const closeModal=document.querySelector('.dialog_close')
@@ -28,7 +29,8 @@ const contact = () => {
       .catch((error) => {
         console.error("Error sending email:", error)
       })
-  }
+    }
+    
 
   useEffect(() => {
     const handleResize = () => {
@@ -95,7 +97,7 @@ const contact = () => {
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
                   name='message'
-                  cols="28"
+                  cols={`${screenWidth > 440 ? '36': '27'}`}
                   rows="10"
                   placeholder='Write your project description'
                   className='rounded-md md:p-4 p-2 border-black/30 border-2'

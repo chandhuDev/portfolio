@@ -72,7 +72,7 @@ const contact = () => {
                 })
                }
             </div>
-            <div className='flex flex-col md:gap-y-5 gap-y-3 md:mt-0 mt-4 md:ml-28 ml-0'>
+            <div className='flex flex-col md:gap-y-5 gap-y-3 md:mt-0 mt-4 md:ml-28 ml-0 container mx-auto'>
               <p className='md:text-2xl text-xl font-normal w-full text-center block md:mb-0 mb-3'>Write your Project</p>
                <form className='md:text-base text-sm rounded-md shadow-lg border-2 md:p-6 p-4 md:space-y-12 space-y-8' ref={form} onSubmit={sendMail}>
                 <div className='relative'>
@@ -97,10 +97,9 @@ const contact = () => {
                   <label className='absolute z-20 left-6 -top-3 bg-white/95 px-1'>Project</label>
                   <textarea
                   name='message'
-                  cols={`${screenWidth > 440 ? '36': '27'}`}
                   rows="10"
                   placeholder='Write your project description'
-                  className='rounded-md md:p-4 p-2 border-black/30 border-2'
+                  className='rounded-md md:p-4 p-2 border-black/30 border-2 w-full'
                   required
                   >
                   </textarea>

@@ -55,7 +55,7 @@ export const about_items=[
   {
     name:'Experience',
     class:'award-alt',
-    number:'9+ months',
+    number:'1 year',
   },
   {
     name:'Completed',
